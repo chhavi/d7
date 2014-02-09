@@ -561,10 +561,12 @@ specific prefix. -->
       <property name="project.version" value="7.x-1.0"/>
       <property name="module" value="coder_review"/>
     </phingcall>-->
-
+	
+    <exec command="phpcs --standard=Drupal ${project.code.dir}/modules/fivestar/fivestar.module" logoutput="true" />
+	
     <!-- Perform actual coder review for each style -->
-    <foreach target="dcoder-review" param="coder.review.type"
-             list="comment,i18n,security,sql,style" />
+    <!--<foreach target="dcoder-review" param="coder.review.type"
+             list="comment,i18n,security,sql,style" /> -->
   </target>
   
   <target name="dcoder-review">
