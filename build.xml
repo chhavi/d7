@@ -736,10 +736,9 @@ Execution of this target can be skipped by setting the
         <!-- Run the tests and generate JUnit XML reports. This requires
              Drush 4.5 or newer or [a patch](http://drupal.org/node/1109408). -->
 			 
-        <drush command="test-run" uri="${drupal.uri}" root="${project.drupal.dir}" haltonerror="false">
+        <drush command="test-run UserAdminTestCase" uri="${drupal.uri}" root="${project.drupal.dir}" haltonerror="false">
           <param>${project.simpletest.tests}</param>
           <option name="xml">${project.testdir}</option>
-		  <option>UserAdminTestCase</option>
           </drush>
       </then>
       <else>
