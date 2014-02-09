@@ -686,6 +686,7 @@ Execution of this target can be skipped by setting the
 -->
   <target name="simpletest"
           description="Run all unit tests"
+		  depends="setup-phing-drush"
           unless="project.simpletest.skip">
     <mkdir dir="${project.testdir}"/>
     <!-- Enable simpletest module. If using Drupal 6 the module will be
