@@ -734,8 +734,11 @@ Execution of this target can be skipped by setting the
              returnProperty="project.simpletest.tests"/>
 
         <!-- Run the tests and generate JUnit XML reports. This requires
-             Drush 4.5 or newer or [a patch](http://drupal.org/node/1109408). -->
-		<!-- <drush command="test-run" uri="${drupal.uri}" root="${project.drupal.dir} --all" haltonerror="false"> -->
+             Drush 4.5 or newer or [a patch](http://drupal.org/node/1109408). 
+			 
+		<drush command="test-run" uri="${drupal.uri}" root="${project.drupal.dir} --all" haltonerror="false">
+		Use above command to run test cases for all. -->
+		
 		
         <drush command="test-run" uri="${drupal.uri}" root="${project.drupal.dir} UserAdminTestCase" haltonerror="false">
           <param>${project.simpletest.tests}</param>
