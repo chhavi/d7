@@ -174,7 +174,8 @@ specific prefix. -->
  
 <!-- ### Run security review -->
 
-<target name="security-review">
+<target name="security-review"
+		depends="setup-phing-drush">
 	<drush command="secrev" root="${project.drupal.dir}" />
 </target>
 
