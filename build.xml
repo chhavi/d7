@@ -115,6 +115,7 @@ Do not run `docs` for now. Generating documentation eats up memory and build
 time and is largely obsolete when using GitHub. -->
   <target name="build" depends="init,
                                 analyze,
+								security-review,
 								simpletest" />
 
 <!-- ### Analyze code
@@ -169,7 +170,13 @@ specific prefix. -->
     <!--<foreach target="coder-review" param="coder.review.type"
              list="comment,i18n,security,sql,style" /> -->
   </target>
-  
+ 
+ 
+<!-- ### Run security review -->
+
+<target name="security-review">
+	<drush command="secrev" root="${project.drupal.dir}" />
+</target>
 
   <!-- ### Run simpletests
 
